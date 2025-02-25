@@ -1,0 +1,213 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.container {
+  width: 100%;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 64px 0;
+}
+
+.navbar .left {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.navbar .right {
+  width: 400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar .right a {
+  text-decoration: none;
+  color: black;
+}
+
+.navbar .right a:hover {
+  text-decoration: underline;
+}
+
+.navbar .right img {
+  width: 24px;
+  height: 24px;
+}
+
+.navbar .bar {
+  width: 50px;
+  height: 2px;
+  border-radius: 10px;
+  padding: 3px 5px;
+  background: black;
+  margin-top: 10px;
+}
+
+.hamburger {
+  display: none;
+}
+
+.grid-projects {
+  display: grid;
+  grid-template-areas:
+    'eth eth alphabeth'
+    'eth eth traveler'
+    'astro cube traveler'
+    'cup insta insta'
+    'cup insta insta'
+    'foam foam dimensional'
+    'foam foam dimensional';
+  grid-gap: 16px;
+  width: 100%;
+}
+
+#eth {
+  grid-area: eth;
+}
+
+#alphabeth {
+  grid-area: alphabeth;
+}
+
+#traveler {
+  grid-area: traveler;
+}
+
+#astro {
+  grid-area: astro;
+}
+
+#cube {
+  grid-area: cube;
+}
+
+#cup {
+  grid-area: cup;
+}
+
+#insta {
+  grid-area: insta;
+}
+
+#foam {
+  grid-area: foam;
+}
+
+#dimensional {
+  grid-area: dimensional;
+}
+
+.projects {
+  /* width: 600px; */
+  position: relative;
+}
+
+.projects img {
+  width: 100%;
+  object-fit: cover;
+  height: 100%;
+}
+
+.projects .overlay {
+  background: rgba(225, 225, 225, 0.1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-weight: bold;
+  letter-spacing: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  opacity: 0;
+  transition: all 0.2s;
+}
+
+.projects .overlay:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.footer {
+  text-align: center;
+  padding: 64px;
+}
+
+/* Media query */
+
+@media (max-width: 1100px) {
+  .container {
+    max-width: 100%;
+    padding: 16px;
+  }
+
+  .grid-projects {
+    margin-top: 150px;
+    grid-template-areas:
+      'eth eth'
+      'alphabeth traveler'
+      'astro cube'
+      'insta insta'
+      'cup foam'
+      'dimensional dimensional';
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 16px 24px;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    background-color: white;
+    width: 100%;
+  }
+
+  .navbar .right {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+    margin-right: 10px;
+  }
+
+  .grid-projects {
+    grid-template-areas:
+      'eth eth'
+      'alphabeth alphabeth'
+      'traveler traveler'
+      'astro cube'
+      'insta insta'
+      'cup cup'
+      'foam foam'
+      'dimensional dimensional';
+  }
+
+  .projects .overlay {
+    font-size: 20px;
+    /* color: white; */
+  }
+
+  .footer {
+    padding: 32px;
+    font-size: 14px;
+  }
+}
